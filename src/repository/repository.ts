@@ -10,7 +10,8 @@ class Repository {
     constructor() { }
 
     async connect(): Promise<void> {
-        if (!this.connection) {
+        try {
+             if (!this.connection) {
             this.connection = await mysql.createConnection({
                 host: databaseHost,
                 user: databaseUser,
@@ -23,6 +24,10 @@ class Repository {
         else {
             console.log('BBDD no conectada')
         }
+        } catch (error) {
+            throw error
+        }
+       
     }
 
     async disconnect(): Promise<void> {
@@ -34,9 +39,13 @@ class Repository {
     }
 
     async connectando(): Promise<void> {
-        if (!this.connection) {
+        try {
+            if (!this.connection) {
             await this.connect()
         }
+        } catch (error) {
+            throw error
+        } 
     }
 
     async crearUsuario(datos: Usuarios): Promise<Usuarios> {
