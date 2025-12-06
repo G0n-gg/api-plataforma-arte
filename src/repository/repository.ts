@@ -56,8 +56,8 @@ class Repository {
 
         if (datos.esArtista) {
             const esArtista = 'artista'
-            await this.connection!.execute('INSERT INTO usuarios (tipo, email, username, password) VALUES (?, ?, ?, ?)',
-                [esArtista, datos.email, datos.username, datos.password]
+            await this.connection!.execute('INSERT INTO usuarios (tipo, email, username, password, descripcion, priorizar) VALUES (?, ?, ?, ?, ?, )',
+                [esArtista, datos.email, datos.username, datos.password, '', true]
             )
         }
         else if (datos.esArtista == false) {
