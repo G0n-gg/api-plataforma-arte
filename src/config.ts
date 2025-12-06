@@ -1,4 +1,4 @@
-export const databaseHost = 'mysql.railway.internalshinkansen.proxy.rlwy.net';
+export const databaseHost = 'shinkansen.proxy.rlwy.net'
 export const databaseUser = process.env.MYSQLUSER || 'root';
 export const databasePort = parseInt(process.env.MYSQLPORT || '46114');
 export const databaseName = process.env.MYSQLDATABASE || 'arte';
