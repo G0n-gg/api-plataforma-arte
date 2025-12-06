@@ -15,7 +15,7 @@ class Repository {
             this.connection = await mysql.createConnection({
                 host: databaseHost,
                 user: databaseUser,
-                password: databasePassWord,
+                password: '',
                 database: databaseName,
                 port: databasePort
             })
