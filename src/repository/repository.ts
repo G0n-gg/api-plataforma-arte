@@ -56,14 +56,14 @@ class Repository {
 
         if (datos.esArtista) {
             const esArtista = 'artista'
-            await this.connection!.execute('INSERT INTO usuarios (tipo, email, username, password, descripcion, priorizar) VALUES (?, ?, ?, ?, ?, )',
-                [esArtista, datos.email, datos.username, datos.password, '', true]
+            await this.connection!.execute('INSERT INTO usuarios (tipo, email, username, password, descripcion, imagenperfil, priorizar) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                [esArtista, datos.email, datos.username, datos.password, '', '', true]
             )
         }
         else if (datos.esArtista == false) {
             const esCliente = 'cliente'
-            await this.connection!.execute('INSERT INTO usuarios (tipo, email, username, password, descripcion, priorizar) VALUES (?, ?, ?, ?, ?, ?)',
-                [esCliente, datos.email, datos.username, datos.password, '', true]
+            await this.connection!.execute('INSERT INTO usuarios (tipo, email, username, password, descripcion, imagenperfil, priorizar) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                [esCliente, datos.email, datos.username, datos.password, '', '', true]
             )
         }
 
