@@ -9,13 +9,13 @@ class Repository {
 
     constructor() { }
 
-    async connect(): Promise<void> {
+    async connect() {
         try {
              if (!this.connection) {
             this.connection = await mysql.createConnection({
                 host: databaseHost,
                 user: databaseUser,
-                password: '',
+                password: databasePassWord,
                 database: databaseName,
                 port: databasePort
             })

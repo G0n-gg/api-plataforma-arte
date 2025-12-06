@@ -33,6 +33,7 @@ router.post('/registro', (req, res) => {
   console.log('Body recibido:', req.body);
   controller.crearUsuario(req, res);
 });
+
 //LOGINS
 router.post('/login', (req, res) => controller.loginUsuario(req, res))
 
