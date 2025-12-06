@@ -1,5 +1,5 @@
 import { databaseHost, databaseName, databaseUser, databasePort, databasePassWord } from '../config'
-import mysql, { RowDataPacket } from 'mysql2/promise'
+import mysql from 'mysql2/promise'
 import { Usuarios } from '../models/usuarios'
 import { Asociados } from '../models/asociados'
 

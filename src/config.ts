@@ -1,4 +1,4 @@
-export const databaseHost = process.env.MYSQLHOST || 'localhost';
+export const databaseHost = 'mysql.railway.internal';
 export const databaseUser = process.env.MYSQLUSER || 'root';
 export const databasePort = parseInt(process.env.MYSQLPORT || '3306');
 export const databaseName = process.env.MYSQLDATABASE || 'arte';
