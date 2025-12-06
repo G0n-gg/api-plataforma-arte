@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
-    "build": "npx tsc",
+    "build": "npx --no-install tsc",
     "serve": "node dist/server.js"
   },
   "keywords": [],
