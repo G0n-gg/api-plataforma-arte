@@ -1,4 +1,4 @@
-import { databaseHost, databaseName, databaseUser, databasePort } from '../config'
+import { databaseHost, databaseName, databaseUser, databasePort, databasePassWord } from '../config'
 import mysql, { RowDataPacket } from 'mysql2/promise'
 import { Usuarios } from '../models/usuarios'
 import { Asociados } from '../models/asociados'
@@ -14,7 +14,7 @@ class Repository {
             this.connection = await mysql.createConnection({
                 host: databaseHost,
                 user: databaseUser,
-                password: '',
+                password: databasePassWord,
                 database: databaseName,
                 port: databasePort
             })
@@ -40,7 +40,8 @@ class Repository {
     }
 
     async crearUsuario(datos: Usuarios): Promise<Usuarios> {
-        if (!this.connection) {
+        try {
+            if (!this.connection) {
             await this.connect()
         }
 
@@ -59,6 +60,10 @@ class Repository {
 
         const dataOculta = { ...datos, rpassword: '', password: '', }
         return dataOculta
+        } catch (error) {
+            throw error
+        }
+        
     }
 
     async loginLogs(nombreUsuario: string, fecha: string, hora: string) {
