@@ -3,6 +3,9 @@ import routes from './routes'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import { corsOrigin } from './config'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 const PORT: any = process.env.PORT ?? 8000
