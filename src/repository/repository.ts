@@ -25,9 +25,9 @@ class Repository {
             console.log('BBDD no conectada')
         }
         } catch (error) {
+            console.log(error)
             throw error
         }
-       
     }
 
     async disconnect(): Promise<void> {

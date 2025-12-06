@@ -30,6 +30,7 @@ class Service {
 
                 return await this.repository.crearUsuario(datos)
             } catch (error) {
+                console.log(error)
                 throw error
             }
         }
