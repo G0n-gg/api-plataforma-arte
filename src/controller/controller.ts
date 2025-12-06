@@ -19,7 +19,8 @@ class Controller {
 
             return res.status(201).json({ message: 'Usuario creado' })
         } catch (error: any) {
-            return res.status(400).json({ error: error.message })
+            console.error('Error creando usuario:', error);
+            return res.status(400).json({ error: error.message || 'Error desconocido' });
         }
     }
 
@@ -268,7 +269,7 @@ class Controller {
         try {
             const ruta = req.file?.path || ''
 
-            if(!ruta || ruta == '') res.status(400).json('Imagen no encontrada')
+            if (!ruta || ruta == '') res.status(400).json('Imagen no encontrada')
 
             const result = await cloudinary.uploader.upload(ruta, { folder: 'perfiles' });
             await fs.unlink(ruta);
