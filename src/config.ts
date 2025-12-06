@@ -2,7 +2,7 @@ export const databaseHost = 'mysql.railway.internal';
 export const databaseUser = process.env.MYSQLUSER || 'root';
 export const databasePort = parseInt(process.env.MYSQLPORT || '3306');
 export const databaseName = process.env.MYSQLDATABASE || 'arte';
-export const databasePassWord = process.env.MYSQLPASSWORD || '';
+export const databasePassWord = process.env.MYSQL_ROOT_PASSWORD || '';
 
 export const sKey = process.env.JWT_SECRET || 'Ooops';
 
