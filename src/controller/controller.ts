@@ -180,7 +180,7 @@ class Controller {
         try {
             const username = req.body.username
             const adminUsername = req.body.adminUsername
-            const descripcion = req.body.descripcion
+            const descripcion = req.body.descripcion || ''
 
             if (username && descripcion) {
                 const response = await this.service.cambiarDescripcion(username, descripcion)
