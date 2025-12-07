@@ -143,7 +143,6 @@ class Controller {
         try {
             const response = await this.service.getProfesionales()
 
-
             res.status(200).json(response)
         } catch (error) {
             return res.status(400).json('Error en petición de profesionales')

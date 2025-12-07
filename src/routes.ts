@@ -29,10 +29,7 @@ router.put('/perfil/descripcion', (req, res) => controller.cambiarDescripcion(re
 router.delete('/perfil', (req, res) => controller.borrarUsuario(req, res))
 
 //REGISTRO
-router.post('/registro', (req, res) => {
-  console.log('Body recibido:', req.body);
-  controller.crearUsuario(req, res);
-});
+router.post('/registro', (req, res) => controller.crearUsuario(req, res));
 
 //LOGINS
 router.post('/login', (req, res) => controller.loginUsuario(req, res))
