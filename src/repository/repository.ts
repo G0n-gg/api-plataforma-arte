@@ -589,7 +589,7 @@ class Repository {
 
             const [sentencia] = await this.connection!.execute('SELECT * FROM opiniones')
 
-            if ((sentencia as any[]).length == 0) return null
+            if ((sentencia as any[]).length == 0) return []
 
             return ([sentencia][0])
         } catch (error) {

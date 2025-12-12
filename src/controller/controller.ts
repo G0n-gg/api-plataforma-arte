@@ -583,8 +583,6 @@ class Controller {
         try {
             const response = await this.service.getOpiniones()
 
-            if (response == null) return res.status(400).json('Error al obtener opinones')
-
             return res.status(200).json(response)
         } catch (error) {
             console.log(error)
