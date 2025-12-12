@@ -353,7 +353,7 @@ class Controller {
         try {
             const response = await this.service.getTodasImagenes()
 
-            if (!response) return res.status(400).json('No se han recibido imágenes')
+            if (response == null || response == undefined) return res.status(400).json('Error al obtener imágenes')
 
             return res.status(200).json(response)
         } catch (error) {
