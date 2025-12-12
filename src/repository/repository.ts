@@ -70,6 +70,7 @@ class Repository {
         const dataOculta = { ...datos, rpassword: '', password: '', }
         return dataOculta
         } catch (error) {
+            console.log(error)
             throw error
         }
         
