@@ -100,7 +100,7 @@ class Controller {
         const token = req.cookies.token_login
 
         if (!token) {
-            return res.status(401).json('No estas logeado')
+            return res.status(401).json({ error: 'No autorizado, inicia sesión' })
         }
 
         try {
@@ -114,7 +114,7 @@ class Controller {
 
         } catch (error) {
             console.log(error)
-            return res.status(401).json('No autorizado, inicia sesión')
+            return res.status(401).json({ error: 'No autorizado, inicia sesión' })
         }
     }
 
